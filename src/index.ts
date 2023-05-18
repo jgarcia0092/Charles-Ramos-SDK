@@ -13,3 +13,5 @@ export class LordOfMovie {
         this.quote = new Quote(accessToken);
     }
 }
+
+export default LordOfMovie;

@@ -1,6 +1,6 @@
 import { Movie, Quote } from './modules';
 
-export class LordOfMovie {
+export class LordOfRings {
     public movie: Movie;
     public quote: Quote;
 
@@ -14,4 +14,4 @@ export class LordOfMovie {
     }
 }
 
-export default LordOfMovie;
+export default LordOfRings;

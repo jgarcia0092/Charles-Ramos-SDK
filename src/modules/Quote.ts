@@ -5,7 +5,7 @@ export class Quote extends BaseModule {
         super(accessToken);
     }
 
-    get = (limit: number = 1000, offset: number = 0) => {
+    getAll = (limit: number = 1000, offset: number = 0) => {
         return this.theOneAPI.get('/quote', { params: { limit, offset } }).then(this.processResponse);
     }
 

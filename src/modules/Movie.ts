@@ -14,7 +14,7 @@ export class Movie extends BaseModule {
         return this.theOneAPI.get(`/movie/${id}`).then(this.processResponse);
     }
 
-    getQuote = (id: string) => {
+    getQuoteById = (id: string) => {
         return this.theOneAPI.get(`/movie/${id}/quote`).then(this.processResponse);
     }
 }

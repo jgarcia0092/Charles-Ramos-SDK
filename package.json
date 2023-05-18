@@ -2,15 +2,24 @@
   "name": "lord-of-rings",
   "version": "1.0.0",
   "description": "The Lord of the Rings SDK",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": ["lib/**/*"],
   "scripts": {
     "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly" : "npm run lint",
+    "preversion" : "npm run lint",
+    "version" : "npm run format && git add -A src",
+    "postversion" : "git push && git push --tags",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "SDK"
   ],
-  "author": "Charles Ramos",
+  "author": "Charles R.",
   "license": "ISC",
   "repository": {
     "type": "git",

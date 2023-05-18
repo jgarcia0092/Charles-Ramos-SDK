@@ -1,6 +1,6 @@
 {
   "name": "@charles-dr/lord-of-rings",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The Lord of the Rings SDK",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -25,12 +25,12 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/charles-dr/lord-of-rings.git"
+    "url": "git+https://github.com/charles-dr/Charles-Ramos-SDK.git"
   },
   "bugs": {
-    "url": "https://github.com/charles-dr/lord-of-rings/issues"
+    "url": "https://github.com/charles-dr/Charles-Ramos-SDK/issues"
   },
-  "homepage": "https://github.com/charles-dr/lord-of-rings#readme",
+  "homepage": "https://github.com/charles-dr/Charles-Ramos-SDK#readme",
   "publishConfig": {
     "access": "public"
   },

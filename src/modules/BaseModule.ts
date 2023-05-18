@@ -1,6 +1,11 @@
 import axios from 'axios';
 import type { AxiosInstance, AxiosResponse } from 'axios';
 
+/**
+ * @name BaseModule
+ * @description API instance to The One API
+ * @requires accessToken {string} access token from https://the-one-api.dev/
+ */
 export class BaseModule {
     protected theOneAPI: AxiosInstance;
     constructor(accessToken: string) {

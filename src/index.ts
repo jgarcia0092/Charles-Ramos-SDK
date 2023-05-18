@@ -1,5 +1,10 @@
 import { Movie, Quote } from './modules';
 
+/**
+ * @name LordOfRings
+ * @description SDK Class for The One API
+ * @requires accessToken {string} access token from https://the-one-api.dev/
+ */
 export class LordOfRings {
     public movie: Movie;
     public quote: Quote;

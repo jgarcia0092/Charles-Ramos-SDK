@@ -1,5 +1,9 @@
 import { BaseModule } from './BaseModule';
 
+/**
+ * @name Movie
+ * @description the module that manages endpoints under `/movie`.
+ */
 export class Movie extends BaseModule {
     constructor(accessToken: string) {
         super(accessToken);

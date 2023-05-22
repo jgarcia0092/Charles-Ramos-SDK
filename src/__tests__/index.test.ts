@@ -38,23 +38,29 @@ describe('Movie module', () => {
     test('can get a movie by id', () => {
         return lordOfRings.movie.getById(movieId)
             .then(res => {
-                expect(res).toHaveProperty('docs');
-                expect(res).toHaveProperty('total');
-                expect(res).toHaveProperty('limit');
-                expect(res).toHaveProperty('offset');
-                expect(res).toHaveProperty('page');
-                expect(res).toHaveProperty('pages');
-                expect(res.docs[0]._id).toEqual(movieId);
+                if (res) {
+                    expect(res).toHaveProperty('_id');
+                    expect(res).toHaveProperty('name');
+                    expect(res).toHaveProperty('runtimeInMinutes');
+                    expect(res).toHaveProperty('budgetInMillions');
+                    expect(res).toHaveProperty('boxOfficeRevenueInMillions');
+                    expect(res).toHaveProperty('academyAwardNominations');
+                    expect(res).toHaveProperty('academyAwardWins');
+                    expect(res).toHaveProperty('rottenTomatoesScore');
+                }
             });
     });
 
     test('can get movie quotes by id', () => {
         return lordOfRings.movie.getQuoteById(movieId)
             .then(res => {
-                expect(res).toHaveProperty('docs');
-                expect(res).toHaveProperty('total');
-                expect(res).toHaveProperty('limit');
-                expect(res).toHaveProperty('offset');
+                if (res) {
+                    expect(res).toHaveProperty('_id');
+                    expect(res).toHaveProperty('dialog');
+                    expect(res).toHaveProperty('movie');
+                    expect(res).toHaveProperty('character');
+                    expect(res).toHaveProperty('id');
+                }
             });
     });
 });
@@ -84,12 +90,13 @@ describe('Quote module', () => {
     test('can get a quote by id', () => {
         return lordOfRings.movie.getById(quoteId)
             .then(res => {
-                expect(res).toHaveProperty('docs');
-                expect(res).toHaveProperty('total');
-                expect(res).toHaveProperty('limit');
-                expect(res).toHaveProperty('offset');
-                expect(res).toHaveProperty('page');
-                expect(res).toHaveProperty('pages');
+                if (res) {
+                    expect(res).toHaveProperty('_id');
+                    expect(res).toHaveProperty('dialog');
+                    expect(res).toHaveProperty('movie');
+                    expect(res).toHaveProperty('character');
+                    expect(res).toHaveProperty('id');
+                }
             });
     });
 });

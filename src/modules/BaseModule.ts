@@ -1,5 +1,6 @@
 import axios from 'axios';
 import type { AxiosInstance, AxiosResponse } from 'axios';
+import type { LorResponse } from '@/types';
 
 /**
  * @name BaseModule
@@ -18,7 +19,7 @@ export class BaseModule {
         });
     }
 
-    processResponse(res: AxiosResponse<any, any>) {
+    processResponse<T>(res: AxiosResponse<LorResponse<T>, any>) {
         return res.data;
     }
 }

@@ -1,4 +1,4 @@
-import { LorMovie, LorQuote, LorResponse } from '@/types';
+import { LorQuote } from '@/types';
 import { BaseModule } from './BaseModule';
 
 /**
@@ -8,29 +8,7 @@ import { BaseModule } from './BaseModule';
  */
 export class Movie extends BaseModule {
     constructor(accessToken: string) {
-        super(accessToken);
-    }
-
-    /**
-     * @function getAll
-     * @description get a movie list.
-     * @param {number} limit
-     * @param {number} offset
-     */
-    public getAll(limit: number = 1000, offset: number = 0) {
-        return this.theOneAPI.get<LorResponse<LorMovie>>('/movie', { params: { offset, limit } })
-            .then(this.processResponse);
-    }
-
-    /**
-     * @function getById
-     * @description get a movie by id.
-     * @param {string} id
-     */
-    getById(id: string) {
-        return this.theOneAPI.get<LorResponse<LorMovie>>(`/movie/${id}`)
-            .then((res) => res.data)
-            .then((res) => res.docs?.[0]);
+        super(accessToken, 'movie');
     }
 
     /**
@@ -39,8 +17,6 @@ export class Movie extends BaseModule {
      * @param {string} id
      */
     getQuoteById(id: string) {
-        return this.theOneAPI.get<LorResponse<LorQuote>>(`/movie/${id}/quote`)
-            .then((res) => res.data)
-            .then((res) => res.docs?.[0]);
+        return this.getOne<LorQuote>(`/${this.endpoint}/${id}/quote`);
     }
 }

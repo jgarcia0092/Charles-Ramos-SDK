@@ -25,3 +25,27 @@ export type LorQuote = {
     character: number;
     id: number;
 }
+
+export type PaginationParams = {
+    limit?: number;
+    offset?: number;
+    page?: number;
+}
+
+export type FilterParams = {
+    match: string;
+    negateMatch: string;
+    include: string;
+    exclude: string;
+    exists: string;
+    doesNotExist: string;
+}
+
+export type SortParams = {
+    field: keyof LorMovie | keyof LorQuote;
+    direction: SortDirection;
+}
+
+export enum SortDirection {
+    asc, desc
+}
